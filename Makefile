@@ -1,12 +1,11 @@
 CFLAGS=-std=c11 -g -static
 
-xcc: main.o
-	$(CC) -o $@ $? $(LDFLAGS)
+xcc: xcc.c
 
 test: xcc
-	./test.sh
+		./test.sh
 
 clean:
-	rm -f xcc *.o *~ tmp*
+		rm -f xcc *.o *~ tmp*
 
 .PHONY: test clean
